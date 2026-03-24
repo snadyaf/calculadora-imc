@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+   <style>
+*{
+    font-family: 'Poppins', 'sans-serif';
+}
+body {
+background-color: color-mix(in srgb, rgb(119, 184, 119) 20%, black 80%);
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+.container{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px 0 15px;
+}
+header{
+    color: blanchedalmond;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 15px 0;
+}
+.input-field{
+    display: flex;
+    margin-top: 20px;
+justify-content: center;
+}
+
+::-webkit-input-placeholder{
+    color: rgb(19, 20, 22);
+    margin-top: 20px;
+}
+div#imc{
+    margin-top: 20px;
+    color: blanchedalmond;
+}
+
+
+
+</style>
+    <head>
+<body>
+    <div class="box">
+        <div class="container">
+            <div class="top-header">
+        
+                <header>Calculadora de IMC</header>
+            </div>
+            <div class="input-field">
+                <input type="number" name="kg" id="kg" placeholder="Peso (kg)">
+                <i class="bx bx-peso"></i>
+            </div>
+            <div class="input-field">
+                <input type="number" name= "altura" id="altura" placeholder="Altura (m)">
+                <i class="bx bx-altura"></i>
+            </div>
+            <div class="input-field">
+        <input type="button" value="Calcular" onclick="calcular()"> 
+    </div>     
+        <div id="imc">Seu IMC é:</div>
+            </div>
+</div>
+        </div>
+    </div>
+    <script>
+        function calcular(){
+            var kg = window.document.querySelector('input#kg')
+    var altura = window.document.querySelector('input#altura')
+    var imc = window.document.querySelector('div#imc')
+    var p = Number (kg.value)
+    var a = Number (altura.value)
+    var t = p / a ** 2
+    imc.innerHTML = `Seu IMC é <strong>${t.toFixed(2)}<strong>.`
+    
+        if (t < 18.5){
+            imc.innerHTML = (`Seu IMC é <strong>${t.toFixed(2)}</strong>. Você está abaixo do seu peso ideal.`)
+        }else if (t == 18.5 || t < 25)      {
+            imc.innerHTML = (`Seu IMC é <strong>${t.toFixed(2)}</strong>. Parabéns! Você está no peso ideal.`)
+        }else if(t == 25 || t > 25) {
+        imc.innerHTML = (`Seu IMC é <strong>${t.toFixed(2)}</strong>. Você está acima do seu peso ideal.`)}
+      
+        
+    }
+    </script>
+ 
+</body>
+</html>
