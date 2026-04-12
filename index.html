@@ -75,14 +75,14 @@ div#imc{
     <script>
         function calcular(){
             var kg = window.document.querySelector('input#kg')
-    var altura = window.document.querySelector('input#altura')
-    var imc = window.document.querySelector('div#imc')
-    var p = Number (kg.value)
-    var a = Number (altura.value)
-    var t = p / a ** 2
-    imc.innerHTML = `Seu IMC é <strong>${t.toFixed(2)}<strong>.`
+            var altura = window.document.querySelector('input#altura')
+            var imc = window.document.querySelector('div#imc')
+            var p = Number (kg.value)
+            var a = Number (altura.value)
+            var t = p / a ** 2
+            imc.innerHTML = `Seu IMC é <strong>${t.toFixed(2)}<strong>.`
     
-        if (t < 18.5){
+            if (t < 18.5){
             imc.innerHTML = (`Seu IMC é <strong>${t.toFixed(2)}</strong>. Você está abaixo do seu peso ideal.`)
         }else if (t == 18.5 || t < 25)      {
             imc.innerHTML = (`Seu IMC é <strong>${t.toFixed(2)}</strong>. Parabéns! Você está no peso ideal.`)
